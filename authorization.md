@@ -26,7 +26,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-In addition to providing built-in [authentication](/docs/{{version}}/authentication) services, LaraGram also provides a simple way to authorize user actions against a given resource. For example, even though a user is authenticated, they may not be authorized to update or delete certain Eloquent models or database records managed by your application. LaraGram's authorization features provide an easy, organized way of managing these types of authorization checks.
+In addition to providing built-in [authentication](https://github.com/laraXgram/docs/blob/markdown/authentication.md) services, LaraGram also provides a simple way to authorize user actions against a given resource. For example, even though a user is authenticated, they may not be authorized to update or delete certain Eloquent models or database records managed by your application. LaraGram's authorization features provide an easy, organized way of managing these types of authorization checks.
 
 LaraGram provides two primary ways of authorizing actions: [gates](#gates) and [policies](#creating-policies). Think of gates and policies like listens and controllers. Gates provide a simple, closure-based approach to authorization while policies, like controllers, group logic around a particular model or resource. In this documentation, we'll explore gates first and then examine policies.
 
@@ -362,7 +362,7 @@ You may continue to define additional methods on the policy as needed for the va
 If you used the `--model` option when generating your policy via the Commander console, it will already contain methods for the `viewAny`, `view`, `create`, `update`, `delete`, `restore`, and `forceDelete` actions.
 
 > [!NOTE]
-> All policies are resolved via the LaraGram [service container](/docs/{{version}}/container), allowing you to type-hint any needed dependencies in the policy's constructor to have them automatically injected.
+> All policies are resolved via the LaraGram [service container](https://github.com/laraXgram/docs/blob/markdown/container.md), allowing you to type-hint any needed dependencies in the policy's constructor to have them automatically injected.
 
 <a name="policy-responses"></a>
 ### Policy Responses
@@ -581,7 +581,7 @@ public function create(Request $request): RedirectResponse
 <a name="via-middleware"></a>
 ### Via Middleware
 
-LaraGram includes a middleware that can authorize actions before the incoming request even reaches your listens or controllers. By default, the `LaraGram\Auth\Middleware\Authorize` middleware may be attached to a listen using the `can` [middleware alias](/docs/{{version}}/middleware#middleware-aliases), which is automatically registered by LaraGram. Let's explore an example of using the `can` middleware to authorize that a user can update a post:
+LaraGram includes a middleware that can authorize actions before the incoming request even reaches your listens or controllers. By default, the `LaraGram\Auth\Middleware\Authorize` middleware may be attached to a listen using the `can` [middleware alias](https://github.com/laraXgram/docs/blob/markdown/middleware.md#middleware-aliases), which is automatically registered by LaraGram. Let's explore an example of using the `can` middleware to authorize that a user can update a post:
 
 ```php
 use App\Models\Post;
@@ -591,7 +591,7 @@ Bot::onText('edit {post}', function (Post $post) {
 })->middleware('can:update,post');
 ```
 
-In this example, we're passing the `can` middleware two arguments. The first is the name of the action we wish to authorize and the second is the listen parameter we wish to pass to the policy method. In this case, since we are using [implicit model binding](/docs/{{version}}/listening#implicit-binding), an `App\Models\Post` model will be passed to the policy method. If the user is not authorized to perform the given action, an HTTP response with a 403 status code will be returned by the middleware.
+In this example, we're passing the `can` middleware two arguments. The first is the name of the action we wish to authorize and the second is the listen parameter we wish to pass to the policy method. In this case, since we are using [implicit model binding](https://github.com/laraXgram/docs/blob/markdown/listening.md#implicit-binding), an `App\Models\Post` model will be passed to the policy method. If the user is not authorized to perform the given action, an HTTP response with a 403 status code will be returned by the middleware.
 
 For convenience, you may also attach the `can` middleware to your listen using the `can` method:
 

@@ -16,7 +16,7 @@
 
 Of course, it's not always practical for controllers to generate all the messages and keyboards directly. Thankfully, templates provide a convenient way to organize this content into separate files.
 
-Templates separate your controller / application logic from your presentation logic and are stored in the `app/templates` directory. When using LaraGram, template are usually written using the [Temple8 templating language](/docs/{{version}}/temple8). A simple template might look something like this:
+Templates separate your controller / application logic from your presentation logic and are stored in the `app/templates` directory. When using LaraGram, template are usually written using the [Temple8 templating language](https://github.com/laraXgram/docs/blob/markdown/temple8.md). A simple template might look something like this:
 
 ```temple8
 <!-- Template stored in app/templates/greeting.t8.php -->
@@ -35,7 +35,7 @@ Bot::onText('hi', function () {
 ```
 
 > [!NOTE]
-> Looking for more information on how to write Temple8 templates? Check out the full [Temple8 documentation](/docs/{{version}}/temple8) to get started.
+> Looking for more information on how to write Temple8 templates? Check out the full [Temple8 documentation](https://github.com/laraXgram/docs/blob/markdown/temple8.md) to get started.
 
 <a name="creating-and-rendering-templates"></a>
 ## Creating and Rendering Templates
@@ -46,7 +46,7 @@ You may create a template by placing a file with the `.t8.php` extension in your
 php laragram make:template greeting
 ```
 
-The `.t8.php` extension informs the framework that the file contains a [Temple8 template](/docs/{{version}}/temple8). Temple8 templates contain method input as well as Temple8 directives that allow you to easily call a api request, create "if" statements, iterate over data, and more.
+The `.t8.php` extension informs the framework that the file contains a [Temple8 template](https://github.com/laraXgram/docs/blob/markdown/temple8.md). Temple8 templates contain method input as well as Temple8 directives that allow you to easily call a api request, create "if" statements, iterate over data, and more.
 
 Once you have created a template, you may return it from one of your application's listens or controllers using the global `template` helper:
 
@@ -64,7 +64,7 @@ use LaraGram\Support\Facades\Template;
 return Template::make('greeting', ['name' => 'James']);
 ```
 
-As you can see, the first argument passed to the `template` helper corresponds to the name of the template file in the `app/templates` directory. The second argument is an array of data that should be made available to the template. In this case, we are passing the `name` variable, which is displayed in the template using [Temple8 syntax](/docs/{{version}}/temple8).
+As you can see, the first argument passed to the `template` helper corresponds to the name of the template file in the `app/templates` directory. The second argument is an array of data that should be made available to the template. In this case, we are passing the `name` variable, which is displayed in the template using [Temple8 syntax](https://github.com/laraXgram/docs/blob/markdown/temple8.md).
 
 <a name="nested-template-directories"></a>
 ### Nested Template Directories
@@ -158,7 +158,7 @@ class AppServiceProvider extends ServiceProvider
 
 Template composers are callbacks or class methods that are called when a template is rendered. If you have data that you want to be bound to a template each time that template is rendered, a template composer can help you organize that logic into a single location. Template composers may prove particularly useful if the same template is returned by multiple listens or controllers within your application and always needs a particular piece of data.
 
-Typically, template composers will be registered within one of your application's [service providers](/docs/{{version}}/providers). In this example, we'll assume that the `App\Providers\AppServiceProvider` will house this logic.
+Typically, template composers will be registered within one of your application's [service providers](https://github.com/laraXgram/docs/blob/markdown/providers.md). In this example, we'll assume that the `App\Providers\AppServiceProvider` will house this logic.
 
 We'll use the `Template` facade's `composer` method to register the template composer. LaraGram does not include a default directory for class-based template composers, so you are free to organize them however you wish. For example, you could create an `app/Template/Composers` directory to house all of your application's template composers:
 
@@ -231,7 +231,7 @@ class ProfileComposer
 }
 ```
 
-As you can see, all template composers are resolved via the [service container](/docs/{{version}}/container), so you may type-hint any dependencies you need within a composer's constructor.
+As you can see, all template composers are resolved via the [service container](https://github.com/laraXgram/docs/blob/markdown/container.md), so you may type-hint any dependencies you need within a composer's constructor.
 
 <a name="attaching-a-composer-to-multiple-templates"></a>
 #### Attaching a Composer to Multiple Templates

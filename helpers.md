@@ -1232,7 +1232,7 @@ $classes = Arr::toCssStyles($array);
 */
 ```
 
-This method powers LaraGram's functionality allowing [merging classes with a Blade component's attribute bag](/docs/{{version}}/blade#conditionally-merge-classes) as well as the `@class` [Blade directive](/docs/{{version}}/blade#conditional-classes).
+This method powers LaraGram's functionality allowing [merging classes with a Blade component's attribute bag](https://github.com/laraXgram/docs/blob/markdown/blade#conditionally-merge-classes) as well as the `@class` [Blade directive](https://github.com/laraXgram/docs/blob/markdown/blade#conditional-classes).
 
 <a name="method-array-undot"></a>
 #### `Arr::undot()` {.collection-method}
@@ -2023,7 +2023,7 @@ $url = action([UserController::class, 'profile'], ['id' => 1]);
 <a name="method-listen"></a>
 #### `listen()` {.collection-method}
 
-The `listen` function generates a URL for a given [named listen](/docs/{{version}}/listening#named-listens):
+The `listen` function generates a URL for a given [named listen](https://github.com/laraXgram/docs/blob/markdown/listening.md#named-listens):
 
 ```php
 $url = listen('listen.name');
@@ -2038,7 +2038,7 @@ $url = listen('listen.name', ['id' => 1]);
 <a name="method-to-listen"></a>
 #### `to_listen()` {.collection-method}
 
-The `to_listen` function generates a redirect for a given [named listen](/docs/{{version}}/listening#named-listens):
+The `to_listen` function generates a redirect for a given [named listen](https://github.com/laraXgram/docs/blob/markdown/listening.md#named-listens):
 
 ```php
 return to_listen('users.show', ['user' => 1]);
@@ -2050,7 +2050,7 @@ return to_listen('users.show', ['user' => 1]);
 <a name="method-app"></a>
 #### `app()` {.collection-method}
 
-The `app` function returns the [service container](/docs/{{version}}/container) instance:
+The `app` function returns the [service container](https://github.com/laraXgram/docs/blob/markdown/container.md) instance:
 
 ```php
 $container = app();
@@ -2065,7 +2065,7 @@ $api = app('HelpSpot\API');
 <a name="method-auth"></a>
 #### `auth()` {.collection-method}
 
-The `auth` function returns an [authenticator](/docs/{{version}}/authentication) instance. You may use it as an alternative to the `Auth` facade:
+The `auth` function returns an [authenticator](https://github.com/laraXgram/docs/blob/markdown/authentication.md) instance. You may use it as an alternative to the `Auth` facade:
 
 ```php
 $user = auth()->user();
@@ -2080,7 +2080,7 @@ $user = auth('admin')->user();
 <a name="method-bcrypt"></a>
 #### `bcrypt()` {.collection-method}
 
-The `bcrypt` function [hashes](/docs/{{version}}/hashing) the given value using Bcrypt. You may use this function as an alternative to the `Hash` facade:
+The `bcrypt` function [hashes](https://github.com/laraXgram/docs/blob/markdown/hashing.md) the given value using Bcrypt. You may use this function as an alternative to the `Hash` facade:
 
 ```php
 $password = bcrypt('my-secret-password');
@@ -2111,7 +2111,7 @@ For the inverse of `blank`, see the [filled](#method-filled) function.
 <a name="method-cache"></a>
 #### `cache()` {.collection-method}
 
-The `cache` function may be used to get values from the [cache](/docs/{{version}}/cache). If the given key does not exist in the cache, an optional default value will be returned:
+The `cache` function may be used to get values from the [cache](https://github.com/laraXgram/docs/blob/markdown/cache.md). If the given key does not exist in the cache, an optional default value will be returned:
 
 ```php
 $value = cache('key');
@@ -2139,7 +2139,7 @@ $traits = class_uses_recursive(App\Models\User::class);
 <a name="method-collect"></a>
 #### `collect()` {.collection-method}
 
-The `collect` function creates a [collection](/docs/{{version}}/collections) instance from the given value:
+The `collect` function creates a [collection](https://github.com/laraXgram/docs/blob/markdown/collections.md) instance from the given value:
 
 ```php
 $collection = collect(['Taylor', 'Abigail']);
@@ -2148,7 +2148,7 @@ $collection = collect(['Taylor', 'Abigail']);
 <a name="method-config"></a>
 #### `config()` {.collection-method}
 
-The `config` function gets the value of a [configuration](/docs/{{version}}/configuration) variable. The configuration values may be accessed using "dot" syntax, which includes the name of the file and the option you wish to access. You may also provide a default value that will be returned if the configuration option does not exist:
+The `config` function gets the value of a [configuration](https://github.com/laraXgram/docs/blob/markdown/configuration.md) variable. The configuration values may be accessed using "dot" syntax, which includes the name of the file and the option you wish to access. You may also provide a default value that will be returned if the configuration option does not exist:
 
 ```php
 $value = config('app.timezone');
@@ -2165,7 +2165,7 @@ config(['app.debug' => true]);
 <a name="method-context"></a>
 #### `context()` {.collection-method}
 
-The `context` function gets the value from the current [context](/docs/{{version}}/context). You may also provide a default value that will be returned if the context key does not exist:
+The `context` function gets the value from the current [context](https://github.com/laraXgram/docs/blob/markdown/context.md). You may also provide a default value that will be returned if the context key does not exist:
 
 ```php
 $value = context('trace_id');
@@ -2184,7 +2184,7 @@ context(['trace_id' => Str::uuid()->toString()]);
 <a name="method-decrypt"></a>
 #### `decrypt()` {.collection-method}
 
-The `decrypt` function [decrypts](/docs/{{version}}/encryption) the given value. You may use this function as an alternative to the `Crypt` facade:
+The `decrypt` function [decrypts](https://github.com/laraXgram/docs/blob/markdown/encryption.md) the given value. You may use this function as an alternative to the `Crypt` facade:
 
 ```php
 $password = decrypt($value);
@@ -2195,7 +2195,7 @@ For the inverse of `decrypt`, see the [encrypt](#method-encrypt) function.
 <a name="method-dispatch"></a>
 #### `dispatch()` {.collection-method}
 
-The `dispatch` function pushes the given [job](/docs/{{version}}/queues#creating-jobs) onto the LaraGram [job queue](/docs/{{version}}/queues):
+The `dispatch` function pushes the given [job](https://github.com/laraXgram/docs/blob/markdown/queues.md#creating-jobs) onto the LaraGram [job queue](https://github.com/laraXgram/docs/blob/markdown/queues.md):
 
 ```php
 dispatch(new App\Jobs\SendEmails);
@@ -2204,7 +2204,7 @@ dispatch(new App\Jobs\SendEmails);
 <a name="method-dispatch-sync"></a>
 #### `dispatch_sync()` {.collection-method}
 
-The `dispatch_sync` function pushes the given job to the [sync](/docs/{{version}}/queues#synchronous-dispatching) queue so that it is processed immediately:
+The `dispatch_sync` function pushes the given job to the [sync](https://github.com/laraXgram/docs/blob/markdown/queues.md#synchronous-dispatching) queue so that it is processed immediately:
 
 ```php
 dispatch_sync(new App\Jobs\SendEmails);
@@ -2215,7 +2215,7 @@ If you want to stop executing the script after dumping the variables, use the [d
 <a name="method-encrypt"></a>
 #### `encrypt()` {.collection-method}
 
-The `encrypt` function [encrypts](/docs/{{version}}/encryption) the given value. You may use this function as an alternative to the `Crypt` facade:
+The `encrypt` function [encrypts](https://github.com/laraXgram/docs/blob/markdown/encryption.md) the given value. You may use this function as an alternative to the `Crypt` facade:
 
 ```php
 $secret = encrypt('my-secret-value');
@@ -2226,7 +2226,7 @@ For the inverse of `encrypt`, see the [decrypt](#method-decrypt) function.
 <a name="method-env"></a>
 #### `env()` {.collection-method}
 
-The `env` function retrieves the value of an [environment variable](/docs/{{version}}/configuration#environment-configuration) or returns a default value:
+The `env` function retrieves the value of an [environment variable](https://github.com/laraXgram/docs/blob/markdown/configuration#environment-configuration) or returns a default value:
 
 ```php
 $env = env('APP_ENV');
@@ -2240,7 +2240,7 @@ $env = env('APP_ENV', 'production');
 <a name="method-event"></a>
 #### `event()` {.collection-method}
 
-The `event` function dispatches the given [event](/docs/{{version}}/events) to its listeners:
+The `event` function dispatches the given [event](https://github.com/laraXgram/docs/blob/markdown/events.md) to its listeners:
 
 ```php
 event(new UserRegistered($user));
@@ -2271,7 +2271,7 @@ For the inverse of `filled`, see the [blank](#method-blank) function.
 <a name="method-info"></a>
 #### `info()` {.collection-method}
 
-The `info` function will write information to your application's [log](/docs/{{version}}/logging):
+The `info` function will write information to your application's [log](https://github.com/laraXgram/docs/blob/markdown/logging.md):
 
 ```php
 info('Some helpful information!');
@@ -2301,7 +2301,7 @@ $obj->languages; // ['PHP', 'Ruby']
 <a name="method-logger"></a>
 #### `logger()` {.collection-method}
 
-The `logger` function can be used to write a `debug` level message to the [log](/docs/{{version}}/logging):
+The `logger` function can be used to write a `debug` level message to the [log](https://github.com/laraXgram/docs/blob/markdown/logging.md):
 
 ```php
 logger('Debug message');
@@ -2313,7 +2313,7 @@ An array of contextual data may also be passed to the function:
 logger('User has logged in.', ['id' => $user->id]);
 ```
 
-A [logger](/docs/{{version}}/logging) instance will be returned if no value is passed to the function:
+A [logger](https://github.com/laraXgram/docs/blob/markdown/logging.md) instance will be returned if no value is passed to the function:
 
 ```php
 logger()->error('You are not allowed here.');
@@ -2391,7 +2391,7 @@ return optional(User::find($id), function (User $user) {
 <a name="method-policy"></a>
 #### `policy()` {.collection-method}
 
-The `policy` method retrieves a [policy](/docs/{{version}}/authorization#creating-policies) instance for a given class:
+The `policy` method retrieves a [policy](https://github.com/laraXgram/docs/blob/markdown/authorization.md#creating-policies) instance for a given class:
 
 ```php
 $policy = policy(App\Models\User::class);
@@ -2411,7 +2411,7 @@ return redirect()->listen('listen.name');
 <a name="method-report"></a>
 #### `report()` {.collection-method}
 
-The `report` function will report an exception using your [exception handler](/docs/{{version}}/errors#handling-exceptions):
+The `report` function will report an exception using your [exception handler](https://github.com/laraXgram/docs/blob/markdown/errors.md#handling-exceptions):
 
 ```php
 report($e);
@@ -2426,7 +2426,7 @@ report('Something went wrong.');
 <a name="method-report-if"></a>
 #### `report_if()` {.collection-method}
 
-The `report_if` function will report an exception using your [exception handler](/docs/{{version}}/errors#handling-exceptions) if a given boolean expression evaluates to `true`:
+The `report_if` function will report an exception using your [exception handler](https://github.com/laraXgram/docs/blob/markdown/errors.md#handling-exceptions) if a given boolean expression evaluates to `true`:
 
 ```php
 report_if($shouldReport, $e);
@@ -2437,7 +2437,7 @@ report_if($shouldReport, 'Something went wrong.');
 <a name="method-report-unless"></a>
 #### `report_unless()` {.collection-method}
 
-The `report_unless` function will report an exception using your [exception handler](/docs/{{version}}/errors#handling-exceptions) if a given boolean expression evaluates to `false`:
+The `report_unless` function will report an exception using your [exception handler](https://github.com/laraXgram/docs/blob/markdown/errors.md#handling-exceptions) if a given boolean expression evaluates to `false`:
 
 ```php
 report_unless($reportingDisabled, $e);
@@ -2448,7 +2448,7 @@ report_unless($reportingDisabled, 'Something went wrong.');
 <a name="method-request"></a>
 #### `request()` {.collection-method}
 
-The `request` function returns the current [request](/docs/{{version}}/requests) instance or obtains an input field's value from the current request:
+The `request` function returns the current [request](https://github.com/laraXgram/docs/blob/markdown/requests.md) instance or obtains an input field's value from the current request:
 
 ```php
 $request = request();
@@ -2459,7 +2459,7 @@ $value = request('key', $default);
 <a name="method-rescue"></a>
 #### `rescue()` {.collection-method}
 
-The `rescue` function executes the given closure and catches any exceptions that occur during its execution. All exceptions that are caught will be sent to your [exception handler](/docs/{{version}}/errors#handling-exceptions); however, the request will continue processing:
+The `rescue` function executes the given closure and catches any exceptions that occur during its execution. All exceptions that are caught will be sent to your [exception handler](https://github.com/laraXgram/docs/blob/markdown/errors.md#handling-exceptions); however, the request will continue processing:
 
 ```php
 return rescue(function () {
@@ -2494,7 +2494,7 @@ return rescue(function () {
 <a name="method-resolve"></a>
 #### `resolve()` {.collection-method}
 
-The `resolve` function resolves a given class or interface name to an instance using the [service container](/docs/{{version}}/container):
+The `resolve` function resolves a given class or interface name to an instance using the [service container](https://github.com/laraXgram/docs/blob/markdown/container.md):
 
 ```php
 $api = resolve('HelpSpot\API');
@@ -2577,7 +2577,7 @@ return $user->tap(function (User $user) {
 <a name="method-template"></a>
 #### `template()` {.collection-method}
 
-The `template` function retrieves a [view](/docs/{{version}}/templates) instance:
+The `template` function retrieves a [view](https://github.com/laraXgram/docs/blob/markdown/templates.md) instance:
 
 ```php
 return template('panel.admin');
@@ -2657,7 +2657,7 @@ $result = transform(null, $callback, 'The value is blank');
 <a name="method-validator"></a>
 #### `validator()` {.collection-method}
 
-The `validator` function creates a new [validator](/docs/{{version}}/validation) instance with the given arguments. You may use it as an alternative to the `Validator` facade:
+The `validator` function creates a new [validator](https://github.com/laraXgram/docs/blob/markdown/validation.md) instance with the given arguments. You may use it as an alternative to the `Validator` facade:
 
 ```php
 $validator = validator($data, $rules, $messages);
@@ -2790,7 +2790,7 @@ For a thorough discussion of Carbon and its features, please consult the [offici
 <a name="deferred-functions"></a>
 ### Deferred Functions
 
-While LaraGram's [queued jobs](/docs/{{version}}/queues) allow you to queue tasks for background processing, sometimes you may have simple tasks you would like to defer without configuring or maintaining a long-running queue worker.
+While LaraGram's [queued jobs](https://github.com/laraXgram/docs/blob/markdown/queues.md) allow you to queue tasks for background processing, sometimes you may have simple tasks you would like to defer without configuring or maintaining a long-running queue worker.
 
 Deferred functions allow you to defer the execution of a closure until after the HTTP response has been sent to the user, keeping your application feeling fast and responsive. To defer the execution of a closure, simply pass the closure to the `LaraGram\Support\defer` function:
 
@@ -2879,11 +2879,11 @@ $user = Pipeline::send($user)
     ->then(fn (User $user) => $user);
 ```
 
-As you can see, each invokable class or closure in the pipeline is provided the input and a `$next` closure. Invoking the `$next` closure will invoke the next callable in the pipeline. As you may have noticed, this is very similar to [middleware](/docs/{{version}}/middleware).
+As you can see, each invokable class or closure in the pipeline is provided the input and a `$next` closure. Invoking the `$next` closure will invoke the next callable in the pipeline. As you may have noticed, this is very similar to [middleware](https://github.com/laraXgram/docs/blob/markdown/middleware.md).
 
 When the last callable in the pipeline invokes the `$next` closure, the callable provided to the `then` method will be invoked. Typically, this callable will simply return the given input. For convenience, if you simply want to return the input after it has been processed, you may use the `thenReturn` method.
 
-Of course, as discussed previously, you are not limited to providing closures to your pipeline. You may also provide invokable classes. If a class name is provided, the class will be instantiated via LaraGram's [service container](/docs/{{version}}/container), allowing dependencies to be injected into the invokable class:
+Of course, as discussed previously, you are not limited to providing closures to your pipeline. You may also provide invokable classes. If a class name is provided, the class will be instantiated via LaraGram's [service container](https://github.com/laraXgram/docs/blob/markdown/container.md), allowing dependencies to be injected into the invokable class:
 
 ```php
 $user = Pipeline::send($user)

@@ -65,7 +65,7 @@ The `listens` directory contains all of the listen definitions for your applicat
 
 The `bot.php` file contains listens that LaraGram places in the `bot` middleware group.
 
-The `console.php` file is where you may define all of your closure-based console commands. Each closure is bound to a command instance allowing a simple approach to interacting with each command's IO methods. Even though this file does not define listens, it defines console based entry points (listens) into your application. You may also [schedule](/docs/{{version}}/scheduling) tasks in the `console.php` file.
+The `console.php` file is where you may define all of your closure-based console commands. Each closure is bound to a command instance allowing a simple approach to interacting with each command's IO methods. Even though this file does not define listens, it defines console based entry points (listens) into your application. You may also [schedule](https://github.com/laraXgram/docs/blob/markdown/scheduling.md) tasks in the `console.php` file.
 
 <a name="the-storage-directory"></a>
 ### The Storage Directory
@@ -104,12 +104,12 @@ The `Controllers` directory contains your controllers. Almost all of the logic t
 <a name="the-conversations-directory"></a>
 ### The Conversations Directory
 
-The `Conversations` directory contains all of the conversations classes for your application. These classes are generated using the `make:conversation` command. This directory does not exist by default, but will be created for you when you create your first conversation. To learn more about conversation, check out the documentation on [conversation](/docs/{{version}}/conversation).
+The `Conversations` directory contains all of the conversations classes for your application. These classes are generated using the `make:conversation` command. This directory does not exist by default, but will be created for you when you create your first conversation. To learn more about conversation, check out the documentation on [conversation](https://github.com/laraXgram/docs/blob/markdown/conversation).
 
 <a name="the-events-directory"></a>
 ### The Events Directory
 
-This directory does not exist by default, but will be created for you by the `event:generate` and `make:event` Commander commands. The `Events` directory houses [event classes](/docs/{{version}}/events). Events may be used to alert other parts of your application that a given action has occurred, providing a great deal of flexibility and decoupling.
+This directory does not exist by default, but will be created for you by the `event:generate` and `make:event` Commander commands. The `Events` directory houses [event classes](https://github.com/laraXgram/docs/blob/markdown/events.md). Events may be used to alert other parts of your application that a given action has occurred, providing a great deal of flexibility and decoupling.
 
 <a name="the-exceptions-directory"></a>
 ### The Exceptions Directory
@@ -119,17 +119,17 @@ The `Exceptions` directory contains all of the custom exceptions for your applic
 <a name="the-jobs-directory"></a>
 ### The Jobs Directory
 
-This directory does not exist by default, but will be created for you if you execute the `make:job` Commander command. The `Jobs` directory houses the [queueable jobs](/docs/{{version}}/queues) for your application. Jobs may be queued by your application or run synchronously within the current request lifecycle. Jobs that run synchronously during the current request are sometimes referred to as "commands" since they are an implementation of the [command pattern](https://en.wikipedia.org/wiki/Command_pattern).
+This directory does not exist by default, but will be created for you if you execute the `make:job` Commander command. The `Jobs` directory houses the [queueable jobs](https://github.com/laraXgram/docs/blob/markdown/queues.md) for your application. Jobs may be queued by your application or run synchronously within the current request lifecycle. Jobs that run synchronously during the current request are sometimes referred to as "commands" since they are an implementation of the [command pattern](https://en.wikipedia.org/wiki/Command_pattern).
 
 <a name="the-listeners-directory"></a>
 ### The Listeners Directory
 
-This directory does not exist by default, but will be created for you if you execute the `event:generate` or `make:listener` Commander commands. The `Listeners` directory contains the classes that handle your [events](/docs/{{version}}/events). Event listeners receive an event instance and perform logic in response to the event being fired. For example, a `UserRegistered` event might be handled by a `SendWelcomeEmail` listener.
+This directory does not exist by default, but will be created for you if you execute the `event:generate` or `make:listener` Commander commands. The `Listeners` directory contains the classes that handle your [events](https://github.com/laraXgram/docs/blob/markdown/events.md). Event listeners receive an event instance and perform logic in response to the event being fired. For example, a `UserRegistered` event might be handled by a `SendWelcomeEmail` listener.
 
 <a name="the-models-directory"></a>
 ### The Models Directory
 
-The `Models` directory contains all of your [Eloquent model classes](/docs/{{version}}/eloquent). The Eloquent ORM included with LaraGram provides a beautiful, simple ActiveRecord implementation for working with your database. Each database table has a corresponding "Model" which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.
+The `Models` directory contains all of your [Eloquent model classes](https://github.com/laraXgram/docs/blob/markdown/eloquent.md). The Eloquent ORM included with LaraGram provides a beautiful, simple ActiveRecord implementation for working with your database. Each database table has a corresponding "Model" which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.
 
 <a name="the-middlewares-directory"></a>
 ### The Middlewares Directory
@@ -139,21 +139,21 @@ The `Middlewares` directory contains all of your Middlewares. The middlewares ha
 <a name="the-policies-directory"></a>
 ### The Policies Directory
 
-This directory does not exist by default, but will be created for you if you execute the `make:policy` Commander command. The `Policies` directory contains the [authorization policy classes](/docs/{{version}}/authorization) for your application. Policies are used to determine if a user can perform a given action against a resource.
+This directory does not exist by default, but will be created for you if you execute the `make:policy` Commander command. The `Policies` directory contains the [authorization policy classes](https://github.com/laraXgram/docs/blob/markdown/authorization.md) for your application. Policies are used to determine if a user can perform a given action against a resource.
 
 <a name="the-providers-directory"></a>
 ### The Providers Directory
 
-The `Providers` directory contains all of the [service providers](/docs/{{version}}/providers) for your application. Service providers bootstrap your application by binding services in the service container, registering events, or performing any other tasks to prepare your application for incoming requests.
+The `Providers` directory contains all of the [service providers](https://github.com/laraXgram/docs/blob/markdown/providers.md) for your application. Service providers bootstrap your application by binding services in the service container, registering events, or performing any other tasks to prepare your application for incoming requests.
 
 In a fresh LaraGram application, this directory will already contain the `AppServiceProvider`. You are free to add your own providers to this directory as needed.
 
 <a name="the-rules-directory"></a>
 ### The Rules Directory
 
-This directory does not exist by default, but will be created for you if you execute the `make:rule` Commander command. The `Rules` directory contains the custom validation rule objects for your application. Rules are used to encapsulate complicated validation logic in a simple object. For more information, check out the [validation documentation](/docs/{{version}}/validation).
+This directory does not exist by default, but will be created for you if you execute the `make:rule` Commander command. The `Rules` directory contains the custom validation rule objects for your application. Rules are used to encapsulate complicated validation logic in a simple object. For more information, check out the [validation documentation](https://github.com/laraXgram/docs/blob/markdown/validation.md).
 
 <a name="the-templates-directory"></a>
 ### The Templates Directory
 
-This directory does not exist by default, but will be created for you if you execute the `make:template` Commander command. The `templates` directory contains the messages templates for your application. For more information, check out the [Temple8 Engine](/docs/{{version}}/temple8).
+This directory does not exist by default, but will be created for you if you execute the `make:template` Commander command. The `templates` directory contains the messages templates for your application. For more information, check out the [Temple8 Engine](https://github.com/laraXgram/docs/blob/markdown/temple8.md).

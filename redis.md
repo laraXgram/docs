@@ -15,7 +15,7 @@
 
 [Redis](https://redis.io) is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain [strings](https://redis.io/docs/data-types/strings/), [hashes](https://redis.io/docs/data-types/hashes/), [lists](https://redis.io/docs/data-types/lists/), [sets](https://redis.io/docs/data-types/sets/), and [sorted sets](https://redis.io/docs/data-types/sorted-sets/).
 
-Before using Redis with LaraGram, we encourage you to install and use the [PhpRedis](https://github.com/phpredis/phpredis) PHP extension via PECL. The extension is more complex to install compared to "user-land" PHP packages but may yield better performance for applications that make heavy use of Redis. If you are using [LaraGram Sail](/docs/{{version}}/sail), this extension is already installed in your application's Docker container.
+Before using Redis with LaraGram, we encourage you to install and use the [PhpRedis](https://github.com/phpredis/phpredis) PHP extension via PECL. The extension is more complex to install compared to "user-land" PHP packages but may yield better performance for applications that make heavy use of Redis. If you are using [LaraGram Sail](https://github.com/laraXgram/docs/blob/markdown/sail), this extension is already installed in your application's Docker container.
 
 If you are unable to install the PhpRedis extension, you may install the `predis/predis` package via Composer. Predis is a Redis client written entirely in PHP and does not require any additional extensions:
 
@@ -248,7 +248,7 @@ Supported compression algorithms include: `Redis::COMPRESSION_NONE` (default), `
 <a name="interacting-with-redis"></a>
 ## Interacting With Redis
 
-You may interact with Redis by calling various methods on the `Redis` [facade](/docs/{{version}}/facades). The `Redis` facade supports dynamic methods, meaning you may call any [Redis command](https://redis.io/commands) on the facade and the command will be passed directly to Redis. In this example, we will call the Redis `GET` command by calling the `get` method on the `Redis` facade:
+You may interact with Redis by calling various methods on the `Redis` [facade](https://github.com/laraXgram/docs/blob/markdown/facades.md). The `Redis` facade supports dynamic methods, meaning you may call any [Redis command](https://redis.io/commands) on the facade and the command will be passed directly to Redis. In this example, we will call the Redis `GET` command by calling the `get` method on the `Redis` facade:
 
 ```php
 <?php
@@ -365,7 +365,7 @@ Facades\Redis::pipeline(function (Redis $pipe) {
 
 LaraGram provides a convenient interface to the Redis `publish` and `subscribe` commands. These Redis commands allow you to listen for messages on a given "channel". You may publish messages to the channel from another application, or even using another programming language, allowing easy communication between applications and processes.
 
-First, let's setup a channel listener using the `subscribe` method. We'll place this method call within an [Commander command](/docs/{{version}}/artisan) since calling the `subscribe` method begins a long-running process:
+First, let's setup a channel listener using the `subscribe` method. We'll place this method call within an [Commander command](https://github.com/laraXgram/docs/blob/markdown/artisan) since calling the `subscribe` method begins a long-running process:
 
 ```php
 <?php

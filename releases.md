@@ -19,7 +19,7 @@ When referencing the LaraGram framework or its components from your application 
 <a name="support-policy"></a>
 ## Support Policy
 
-For all LaraGram releases, bug fixes are provided for 18 months and security fixes are provided for 2 years. For all additional libraries, only the latest major release receives bug fixes. In addition, please review the database versions [supported by LaraGram](/docs/{{version}}/database#introduction).
+For all LaraGram releases, bug fixes are provided for 18 months and security fixes are provided for 2 years. For all additional libraries, only the latest major release receives bug fixes. In addition, please review the database versions [supported by LaraGram](https://github.com/laraXgram/docs/blob/markdown/database.md#introduction).
 
 <div class="overflow-auto">
 

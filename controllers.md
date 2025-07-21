@@ -97,12 +97,12 @@ php laragram make:controller ProvisionServer --invokable
 ```
 
 > [!NOTE]
-> Controller stubs may be customized using [stub publishing](/docs/{{version}}/artisan#stub-customization).
+> Controller stubs may be customized using [stub publishing](https://github.com/laraXgram/docs/blob/markdown/artisan#stub-customization).
 
 <a name="controller-middleware"></a>
 ## Controller Middleware
 
-[Middleware](/docs/{{version}}/middleware) may be assigned to the controller's listens in your listen files:
+[Middleware](https://github.com/laraXgram/docs/blob/markdown/middleware.md) may be assigned to the controller's listens in your listen files:
 
 ```php
 Bot::onText('profile', [UserController::class, 'show'])->middleware('auth');
@@ -161,7 +161,7 @@ public static function middleware(): array
 <a name="constructor-injection"></a>
 #### Constructor Injection
 
-The LaraGram [service container](/docs/{{version}}/container) is used to resolve all LaraGram controllers. As a result, you are able to type-hint any dependencies your controller may need in its constructor. The declared dependencies will automatically be resolved and injected into the controller instance:
+The LaraGram [service container](https://github.com/laraXgram/docs/blob/markdown/container.md) is used to resolve all LaraGram controllers. As a result, you are able to type-hint any dependencies your controller may need in its constructor. The declared dependencies will automatically be resolved and injected into the controller instance:
 
 ```php
 <?php

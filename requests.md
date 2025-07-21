@@ -23,7 +23,7 @@ LaraGram's `LaraGram\Request\Request` class provides an object-oriented way to i
 <a name="accessing-the-request"></a>
 ### Accessing the Request
 
-To obtain an instance of the current Bot request via dependency injection, you should type-hint the `LaraGram\Request\Request` class on your listen closure or controller method. The incoming request instance will automatically be injected by the LaraGram [service container](/docs/{{version}}/container):
+To obtain an instance of the current Bot request via dependency injection, you should type-hint the `LaraGram\Request\Request` class on your listen closure or controller method. The incoming request instance will automatically be injected by the LaraGram [service container](https://github.com/laraXgram/docs/blob/markdown/container.md):
 
 ```php
 <?php
@@ -108,7 +108,7 @@ $scope = $request->scope();
 <a name="inspecting-the-request-listen"></a>
 #### Inspecting the Request Listen
 
-Using the `listenIs` method, you may determine if the incoming request has matched a [named listen](/docs/{{version}}/listening#named-listens):
+Using the `listenIs` method, you may determine if the incoming request has matched a [named listen](https://github.com/laraXgram/docs/blob/markdown/listening.md#named-listens):
 
 ```php
 if ($request->listenIs('admin.*')) {

@@ -65,7 +65,7 @@ public function getListenKey(): mixed
 <a name="redirecting-controller-actions"></a>
 ## Redirecting To Controller Actions
 
-You may also generate redirects to [controller actions](/docs/{{version}}/controllers). To do so, pass the controller and action name to the `action` method:
+You may also generate redirects to [controller actions](https://github.com/laraXgram/docs/blob/markdown/controllers.md). To do so, pass the controller and action name to the `action` method:
 
 ```php
 use App\Controllers\HomeController;
@@ -84,7 +84,7 @@ return redirect()->action(
 <a name="redirecting-with-puted-cache-data"></a>
 ## Redirecting With Flashed Session Data
 
-Redirecting to a new listen and [putting data to the cache](/docs/{{version}}/cache#storing-items-in-the-cache) are usually done at the same time. Typically, this is done after successfully performing an action when you put a success message to the cache. For convenience, you may create a `RedirectResponse` instance and put data to the cache in a single, fluent method chain:
+Redirecting to a new listen and [putting data to the cache](https://github.com/laraXgram/docs/blob/markdown/cache.md#storing-items-in-the-cache) are usually done at the same time. Typically, this is done after successfully performing an action when you put a success message to the cache. For convenience, you may create a `RedirectResponse` instance and put data to the cache in a single, fluent method chain:
 
 ```php
 Bot:onCommand('dashboard', function () {
@@ -94,13 +94,13 @@ Bot:onCommand('dashboard', function () {
 });
 ```
 
-You may use the `withInput` method provided by the `RedirectResponse` instance to put the current request's input data to the cache before redirecting the user to a new location. Once the input has been putted to the cache, you may easily [retrieve it](/docs/{{version}}/cache#retrieving-items-from-the-cache) during the next request:
+You may use the `withInput` method provided by the `RedirectResponse` instance to put the current request's input data to the cache before redirecting the user to a new location. Once the input has been putted to the cache, you may easily [retrieve it](https://github.com/laraXgram/docs/blob/markdown/cache.md#retrieving-items-from-the-cache) during the next request:
 
 ```php
 return to_listen('home')->withInput();
 ```
 
-After the user is redirected, you may display the putted message from the [cache](/docs/{{version}}/cache). For example, using [Temple8 syntax](/docs/{{version}}/temple8):
+After the user is redirected, you may display the putted message from the [cache](https://github.com/laraXgram/docs/blob/markdown/cache.md). For example, using [Temple8 syntax](https://github.com/laraXgram/docs/blob/markdown/temple8.md):
 
 ```blade
 @if (cache('status'))

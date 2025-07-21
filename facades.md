@@ -11,7 +11,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-Throughout the LaraGram documentation, you will see examples of code that interacts with LaraGram's features via "facades". Facades provide a "static" interface to classes that are available in the application's [service container](/docs/{{version}}/container). LaraGram ships with many facades which provide access to almost all of LaraGram's features.
+Throughout the LaraGram documentation, you will see examples of code that interacts with LaraGram's features via "facades". Facades provide a "static" interface to classes that are available in the application's [service container](https://github.com/laraXgram/docs/blob/markdown/container.md). LaraGram ships with many facades which provide access to almost all of LaraGram's features.
 
 LaraGram facades serve as "static proxies" to underlying classes in the service container, providing the benefit of a terse, expressive syntax while maintaining more testability and flexibility than traditional static methods. It's perfectly fine if you don't totally understand how facades work - just go with the flow and continue learning about LaraGram.
 
@@ -34,7 +34,7 @@ Throughout the LaraGram documentation, many of the examples will use facades to 
 <a name="helper-functions"></a>
 #### Helper Functions
 
-To complement facades, LaraGram offers a variety of global "helper functions" that make it even easier to interact with common LaraGram features. Some of the common helper functions you may interact with are `template`, `config`, `cache`, and more. Each helper function offered by LaraGram is documented with their corresponding feature; however, a complete list is available within the dedicated [helper documentation](/docs/{{version}}/helpers).
+To complement facades, LaraGram offers a variety of global "helper functions" that make it even easier to interact with common LaraGram features. Some of the common helper functions you may interact with are `template`, `config`, `cache`, and more. Each helper function offered by LaraGram is documented with their corresponding feature; however, a complete list is available within the dedicated [helper documentation](https://github.com/laraXgram/docs/blob/markdown/helpers.md).
 
 For example, instead of using the `LaraGram\Support\Facades\Cache` facade to read a data from cache, we may simply use the `cache` function. Because helper functions are globally available, you do not need to import any classes in order to use them:
 
@@ -140,7 +140,7 @@ class Cache extends Facade
 }
 ```
 
-Instead, the `Cache` facade extends the base `Facade` class and defines the method `getFacadeAccessor()`. This method's job is to return the name of a service container binding. When a user references any static method on the `Cache` facade, LaraGram resolves the `cache` binding from the [service container](/docs/{{version}}/container) and runs the requested method (in this case, `get`) against that object.
+Instead, the `Cache` facade extends the base `Facade` class and defines the method `getFacadeAccessor()`. This method's job is to return the name of a service container binding. When a user references any static method on the `Cache` facade, LaraGram resolves the `cache` binding from the [service container](https://github.com/laraXgram/docs/blob/markdown/container.md) and runs the requested method (in this case, `get`) against that object.
 
 <a name="real-time-facades"></a>
 ## Real-Time Facades
@@ -201,49 +201,49 @@ When the real-time facade is used, the publisher implementation will be resolved
 <a name="facade-class-reference"></a>
 ## Facade Class Reference
 
-Below you will find every facade and its underlying class. This is a useful tool for quickly digging into the API documentation for a given facade root. The [service container binding](/docs/{{version}}/container) key is also included where applicable.
+Below you will find every facade and its underlying class. This is a useful tool for quickly digging into the API documentation for a given facade root. The [service container binding](https://github.com/laraXgram/docs/blob/markdown/container.md) key is also included where applicable.
 
 <div class="overflow-auto">
 
 | Facade                | Class                                                                                                                                 | Service Container Binding |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
-| App                   | [LaraGram\Foundation\Application](https://api.laragram.com/docs/{{version}}/LaraGram/Foundation/Application.html)                     | `app`                     |
-| Commander             | [LaraGram\Contracts\Console\Kernel](https://api.laragram.com/docs/{{version}}/LaraGram/Contracts/Console/Kernel.html)                 | `laragram`                |
-| Auth                  | [LaraGram\Auth\AuthManager](https://api.laragram.com/docs/{{version}}/LaraGram/Auth/AuthManager.html)                                 | `auth`                    |
-| Bot                   | [LaraGram\Listening\Listener](https://api.laragram.com/docs/{{version}}/LaraGram/Listening/Listener.html)                             | `listener`                |
-| Bus                   | [LaraGram\Contracts\Bus\Dispatcher](https://api.laragram.com/docs/{{version}}/LaraGram/Contracts/Bus/Dispatcher.html)                 | &nbsp;                    |
-| Cache (Instance)      | [LaraGram\Cache\Repository](https://api.laragram.com/docs/{{version}}/LaraGram/Cache/Repository.html)                                 | `cache.store`             |
-| Cache                 | [LaraGram\Cache\CacheManager](https://api.laragram.com/docs/{{version}}/LaraGram/Cache/CacheManager.html)                             | `cache`                   |
-| Config                | [LaraGram\Config\Repository](https://api.laragram.com/docs/{{version}}/LaraGram/Config/Repository.html)                               | `config`                  |
-| Context               | [LaraGram\Log\Context\Repository](https://api.laragram.com/docs/{{version}}/LaraGram/Log/Context/Repository.html)                     | &nbsp;                    |
-| Crypt                 | [LaraGram\Encryption\Encrypter](https://api.laragram.com/docs/{{version}}/LaraGram/Encryption/Encrypter.html)                         | `encrypter`               |
-| Date                  | [LaraGram\Support\DateFactory](https://api.laragram.com/docs/{{version}}/LaraGram/Support/DateFactory.html)                           | `date`                    |
-| DB (Instance)         | [LaraGram\Database\Connection](https://api.laragram.com/docs/{{version}}/LaraGram/Database/Connection.html)                           | `db.connection`           |
-| DB                    | [LaraGram\Database\DatabaseManager](https://api.laragram.com/docs/{{version}}/LaraGram/Database/DatabaseManager.html)                 | `db`                      |
-| Event                 | [LaraGram\Events\Dispatcher](https://api.laragram.com/docs/{{version}}/LaraGram/Events/Dispatcher.html)                               | `events`                  |
-| Exceptions (Instance) | [LaraGram\Contracts\Debug\ExceptionHandler](https://api.laragram.com/docs/{{version}}/LaraGram/Contracts/Debug/ExceptionHandler.html) | &nbsp;                    |
-| Exceptions            | [LaraGram\Foundation\Exceptions\Handler](https://api.laragram.com/docs/{{version}}/LaraGram/Foundation/Exceptions/Handler.html)       | &nbsp;                    |
-| File                  | [LaraGram\Filesystem\Filesystem](https://api.laragram.com/docs/{{version}}/LaraGram/Filesystem/Filesystem.html)                       | `files`                   |
-| Gate                  | [LaraGram\Contracts\Auth\Access\Gate](https://api.laragram.com/docs/{{version}}/LaraGram/Contracts/Auth/Access/Gate.html)             | &nbsp;                    |
-| Hash                  | [LaraGram\Contracts\Hashing\Hasher](https://api.laragram.com/docs/{{version}}/LaraGram/Contracts/Hashing/Hasher.html)                 | `hash`                    |
-| Lang                  | [LaraGram\Translation\Translator](https://api.laragram.com/docs/{{version}}/LaraGram/Translation/Translator.html)                     | `translator`              |
-| Log                   | [LaraGram\Log\LogManager](https://api.laragram.com/docs/{{version}}/LaraGram/Log/LogManager.html)                                     | `log`                     |
-| Pipeline (Instance)   | [LaraGram\Pipeline\Pipeline](https://api.laragram.com/docs/{{version}}/LaraGram/Pipeline/Pipeline.html)                               | &nbsp;                    |
-| Process               | [LaraGram\Process\Factory](https://api.laragram.com/docs/{{version}}/LaraGram/Process/Factory.html)                                   | &nbsp;                    |
-| Queue (Base Class)    | [LaraGram\Queue\Queue](https://api.laragram.com/docs/{{version}}/LaraGram/Queue/Queue.html)                                           | &nbsp;                    |
-| Queue (Instance)      | [LaraGram\Contracts\Queue\Queue](https://api.laragram.com/docs/{{version}}/LaraGram/Contracts/Queue/Queue.html)                       | `queue.connection`        |
-| Queue                 | [LaraGram\Queue\QueueManager](https://api.laragram.com/docs/{{version}}/LaraGram/Queue/QueueManager.html)                             | `queue`                   |
-| RateLimiter           | [LaraGram\Cache\RateLimiter](https://api.laragram.com/docs/{{version}}/LaraGram/Cache/RateLimiter.html)                               | &nbsp;                    |
-| Redirect              | [LaraGram\Listening\Redirector](https://api.laragram.com/docs/{{version}}/LaraGram/Listening/Redirector.html)                         | `redirect`                |
-| Redis (Instance)      | [LaraGram\Redis\Connections\Connection](https://api.laragram.com/docs/{{version}}/LaraGram/Redis/Connections/Connection.html)         | `redis.connection`        |
-| Redis                 | [LaraGram\Redis\RedisManager](https://api.laragram.com/docs/{{version}}/LaraGram/Redis/RedisManager.html)                             | `redis`                   |
-| Request               | [LaraGram\Request\Request](https://api.laragram.com/docs/{{version}}/LaraGram/Http/Request.html)                                      | `request`                 |
-| Schedule              | [LaraGram\Console\Scheduling\Schedule](https://api.laragram.com/docs/{{version}}/LaraGram/Console/Scheduling/Schedule.html)           | &nbsp;                    |
-| Schema                | [LaraGram\Database\Schema\Builder](https://api.laragram.com/docs/{{version}}/LaraGram/Database/Schema/Builder.html)                   | &nbsp;                    |
-| Storage (Instance)    | [LaraGram\Contracts\Filesystem\Filesystem](https://api.laragram.com/docs/{{version}}/LaraGram/Contracts/Filesystem/Filesystem.html)   | `filesystem.disk`         |
-| Storage               | [LaraGram\Filesystem\FilesystemManager](https://api.laragram.com/docs/{{version}}/LaraGram/Filesystem/FilesystemManager.html)         | `filesystem`              |
-| Validator (Instance)  | [LaraGram\Validation\Validator](https://api.laragram.com/docs/{{version}}/LaraGram/Validation/Validator.html)                         | &nbsp;                    |
-| Validator             | [LaraGram\Validation\Factory](https://api.laragram.com/docs/{{version}}/LaraGram/Validation/Factory.html)                             | `validator`               |
-| Template              | [LaraGram\Template\Factory](https://api.laragram.com/docs/{{version}}/LaraGram/View/Factory.html)                                     | `template`                |
+| App                   | [LaraGram\Foundation\Application](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Foundation/Application.html)                     | `app`                     |
+| Commander             | [LaraGram\Contracts\Console\Kernel](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Contracts/Console/Kernel.html)                 | `laragram`                |
+| Auth                  | [LaraGram\Auth\AuthManager](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Auth/AuthManager.html)                                 | `auth`                    |
+| Bot                   | [LaraGram\Listening\Listener](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Listening/Listener.html)                             | `listener`                |
+| Bus                   | [LaraGram\Contracts\Bus\Dispatcher](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Contracts/Bus/Dispatcher.html)                 | &nbsp;                    |
+| Cache (Instance)      | [LaraGram\Cache\Repository](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Cache/Repository.html)                                 | `cache.store`             |
+| Cache                 | [LaraGram\Cache\CacheManager](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Cache/CacheManager.html)                             | `cache`                   |
+| Config                | [LaraGram\Config\Repository](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Config/Repository.html)                               | `config`                  |
+| Context               | [LaraGram\Log\Context\Repository](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Log/Context/Repository.html)                     | &nbsp;                    |
+| Crypt                 | [LaraGram\Encryption\Encrypter](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Encryption/Encrypter.html)                         | `encrypter`               |
+| Date                  | [LaraGram\Support\DateFactory](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Support/DateFactory.html)                           | `date`                    |
+| DB (Instance)         | [LaraGram\Database\Connection](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Database/Connection.html)                           | `db.connection`           |
+| DB                    | [LaraGram\Database\DatabaseManager](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Database/DatabaseManager.html)                 | `db`                      |
+| Event                 | [LaraGram\Events\Dispatcher](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Events/Dispatcher.html)                               | `events`                  |
+| Exceptions (Instance) | [LaraGram\Contracts\Debug\ExceptionHandler](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Contracts/Debug/ExceptionHandler.html) | &nbsp;                    |
+| Exceptions            | [LaraGram\Foundation\Exceptions\Handler](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Foundation/Exceptions/Handler.html)       | &nbsp;                    |
+| File                  | [LaraGram\Filesystem\Filesystem](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Filesystem/Filesystem.html)                       | `files`                   |
+| Gate                  | [LaraGram\Contracts\Auth\Access\Gate](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Contracts/Auth/Access/Gate.html)             | &nbsp;                    |
+| Hash                  | [LaraGram\Contracts\Hashing\Hasher](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Contracts/Hashing/Hasher.html)                 | `hash`                    |
+| Lang                  | [LaraGram\Translation\Translator](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Translation/Translator.html)                     | `translator`              |
+| Log                   | [LaraGram\Log\LogManager](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Log/LogManager.html)                                     | `log`                     |
+| Pipeline (Instance)   | [LaraGram\Pipeline\Pipeline](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Pipeline/Pipeline.html)                               | &nbsp;                    |
+| Process               | [LaraGram\Process\Factory](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Process/Factory.html)                                   | &nbsp;                    |
+| Queue (Base Class)    | [LaraGram\Queue\Queue](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Queue/Queue.html)                                           | &nbsp;                    |
+| Queue (Instance)      | [LaraGram\Contracts\Queue\Queue](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Contracts/Queue/Queue.html)                       | `queue.connection`        |
+| Queue                 | [LaraGram\Queue\QueueManager](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Queue/QueueManager.html)                             | `queue`                   |
+| RateLimiter           | [LaraGram\Cache\RateLimiter](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Cache/RateLimiter.html)                               | &nbsp;                    |
+| Redirect              | [LaraGram\Listening\Redirector](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Listening/Redirector.html)                         | `redirect`                |
+| Redis (Instance)      | [LaraGram\Redis\Connections\Connection](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Redis/Connections/Connection.html)         | `redis.connection`        |
+| Redis                 | [LaraGram\Redis\RedisManager](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Redis/RedisManager.html)                             | `redis`                   |
+| Request               | [LaraGram\Request\Request](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Http/Request.html)                                      | `request`                 |
+| Schedule              | [LaraGram\Console\Scheduling\Schedule](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Console/Scheduling/Schedule.html)           | &nbsp;                    |
+| Schema                | [LaraGram\Database\Schema\Builder](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Database/Schema/Builder.html)                   | &nbsp;                    |
+| Storage (Instance)    | [LaraGram\Contracts\Filesystem\Filesystem](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Contracts/Filesystem/Filesystem.html)   | `filesystem.disk`         |
+| Storage               | [LaraGram\Filesystem\FilesystemManager](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Filesystem/FilesystemManager.html)         | `filesystem`              |
+| Validator (Instance)  | [LaraGram\Validation\Validator](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Validation/Validator.html)                         | &nbsp;                    |
+| Validator             | [LaraGram\Validation\Factory](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/Validation/Factory.html)                             | `validator`               |
+| Template              | [LaraGram\Template\Factory](https://api.laragram.comhttps://github.com/laraXgram/docs/blob/markdown/LaraGram/View/Factory.html)                                     | `template`                |
 
 </div>
